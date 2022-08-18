@@ -197,9 +197,9 @@ func setTokenURI{
         pedersen_ptr: HashBuiltin*,
         syscall_ptr: felt*,
         range_check_ptr
-    }(tokenURI_len: felt, tokenURI: felt*):
+    }(base_token_uri_len: felt, base_token_uri: felt*, token_uri_suffix: felt):
     Ownable_only_owner()
-    ERC721_setBaseTokenURI(tokenURI_len, tokenURI)
+    ERC721_Metadata_setBaseTokenURI(base_token_uri_len, base_token_uri, token_uri_suffix)
     return ()
 end
 
